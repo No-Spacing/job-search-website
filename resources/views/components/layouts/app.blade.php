@@ -36,7 +36,7 @@
     </x-main>
     <footer class="footer footer-center bg-base-300 text-base-content p-4">
         <aside>
-            <p>Copyright © 2023 - All right reserved by Job Search Inc.</p>
+            <p>Copyright © 2023 - All right reserved</p>
         </aside>
     </footer>
     {{--  TOAST area --}}

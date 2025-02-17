@@ -59,7 +59,7 @@
     <x-form>
 
         <div class="grid grid-flow-row grid-cols-3 gap-1">
-            <x-checkbox label="Information Technology" wire:model="filter" value="IT Specialist" checked/>
+            <x-checkbox label="IT Specialist" wire:model="filter" value="IT Specialist" checked/>
             <x-checkbox label="Network Administrator" wire:model="filter" value="Network Administrator" />
             <x-checkbox label="Network Security Engineer" wire:model="filter" value="Network Security Engineer" />
 
