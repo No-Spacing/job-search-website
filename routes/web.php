@@ -2,6 +2,8 @@
 
 use App\Livewire\Home;
 use App\Livewire\Welcome;
+use App\Livewire\Login;
+use App\Livewire\Register;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', Welcome::class);
-Route::get('/', Home::class);
+
+Route::get('/home', Home::class)->name('home');
+
+Route::middleware(['UserCheck'])->group(function () {
+
+    Route::get('/login', Login::class)->name('login');
+    Route::get('/register', Register::class);
+
+});
+
+Route::get('/logout', function () {
+    Session::flush();
+    return Redirect::to('/home');
+});
+
