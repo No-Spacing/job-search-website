@@ -17,13 +17,40 @@
             {{-- Drawer toggle for "main-drawer" --}}
  
             {{-- Brand --}}
-            <a href="/"> <x-icon name="fas.search-location" class="w-9 h-9 text-2xl text-blue-500" label="Job Search"  /> </a>
+            <a href="/home"> <x-icon name="fas.search-location" class="w-9 h-9 text-2xl text-blue-500" label="Job Search"  /> </a>
         </x-slot:brand>
  
         {{-- Right side actions --}}
+
         <x-slot:actions>
-            <x-button label="Messages" icon="s-envelope" link="###" class="btn-ghost btn-sm text-green-500" responsive />
-            <x-button label="Notifications" icon="s-bell" link="###" class="btn-ghost btn-sm text-yellow-500" responsive />
+            
+            @if(session()->has('user'))
+
+                <x-button icon="s-envelope" class="btn-circle relative text-green-500">
+                    <x-badge value="2" class="badge-error absolute -right-2 -top-2" />
+                </x-button>
+                
+                <x-button icon="s-bell" class="btn-circle relative text-yellow-500">
+                    <x-badge value="4" class="badge-error absolute -right-2 -top-2" />
+                </x-button>
+
+                <x-dropdown>
+                    <x-slot:trigger>
+                        <x-button label="{{ session('user')->name }}" icon="fas.user-circle" class="btn-ghost btn-sm text-blue-500" responsive />
+                    </x-slot:trigger>
+                
+                    <x-menu-item title="Job Applied" />
+                    <x-menu-item title="Logout" link="/logout"/>
+                </x-dropdown>
+            @else
+                @if(!request()->is('login'))
+                    <x-button label="Login" icon="fas.user-circle" link="/login" class="btn-ghost btn-sm text-blue-500" responsive /> 
+                @endif
+            @endif
+
+            
+            
+                
         </x-slot:actions>
     </x-nav>
 
