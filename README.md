@@ -13,3 +13,6 @@
   ![alt text](https://github.com/No-Spacing/job-search-website/blob/main/screenshot/screenshot3.jpg)
  4. Job Application and Details
   ![alt text](https://github.com/No-Spacing/job-search-website/blob/main/screenshot/screenshot4.jpg)
+ 5. Login and Register Page 
+  ![alt text](https://github.com/No-Spacing/job-search-website/blob/main/screenshot/screenshot5.jpg)
+  ![alt text](https://github.com/No-Spacing/job-search-website/blob/main/screenshot/screenshot6.jpg)
