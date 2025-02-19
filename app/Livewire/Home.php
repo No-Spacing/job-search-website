@@ -24,15 +24,22 @@ class Home extends Component
 
     public $filter = [];
 
+    public int $user = 0;
+
     public function openModal($id): void
     {
         $this->descriptionModal = true;
         $this->singleJob = $this->jobs()->firstWhere('id', $id);
     }
 
-    public function applyJob(): void
+    public function applyJob()
     {
-        $this->success('Job application sent to '. $this->singleJob['email'], position: 'toast-bottom');
+        if(session()->has('user')) {
+            $this->success('Job application sent to '. $this->singleJob['email'], position: 'toast-bottom');
+        } else { 
+            return redirect()->route('login')->with('errorMsg', 'User must be login');    
+        }
+            
     }
 
 
