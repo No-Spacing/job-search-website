@@ -1,3 +1,5 @@
+# Job-search-website
+ A website that finds a job for any applicant that sends job application to Employer’s email
 # features
  1. Laravel 11 as Back-end.
  2. Livewire as Front-end.
